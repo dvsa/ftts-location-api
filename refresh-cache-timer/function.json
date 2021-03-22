@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "schedule": "%CENTRES_CACHE_INTERVAL%",
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "runOnStartup": false
+    }
+  ],
+  "scriptFile": "../dist/refresh-cache/index.js"
+}
