@@ -1,0 +1,92 @@
+{
+    "name": "ftts-location-api",
+    "version": "0.0.1",
+    "description": "Locations API for FTTS",
+    "engines": {
+        "node": ">=14.x",
+        "npm": ">=7.20"
+    },
+    "main": "index.js",
+    "scripts": {
+        "audit": "npm audit --registry https://registry.npmjs.org/",
+        "audit:fix": "npm audit fix --registry https://registry.npmjs.org/",
+        "audit:fix-force": "npm audit fix --force --registry https://registry.npmjs.org/",
+        "build": "rimraf dist && tsc",
+        "copy-config": "cp local.settings.example.json local.settings.json",
+        "coverage-ci": "jest --coverage --reporters=jest-junit --reporters=jest-standard-reporter --ci",
+        "func:start": "npm run build && func extensions install && func start --port 7001",
+        "lint": "eslint --ext .js,.ts .",
+        "lint:fix": "eslint --fix --ext .js,.ts .",
+        "lint:report": "eslint --ext .js,.ts . -f json -o lint/report.json",
+        "test": "jest",
+        "test:coverage": "jest --verbose --coverage",
+        "test:watch": "jest --verbose --watch"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run test"
+        }
+    },
+    "dependencies": {
+        "@dvsa/azure-logger": "5.2.0",
+        "@dvsa/egress-filtering": "4.0.2",
+        "@dvsa/ftts-auth-client": "5.0.2",
+        "agentkeepalive": "4.1.4",
+        "axios": "0.23.0",
+        "bottleneck": "2.19.5",
+        "dynamics-web-api": "1.7.4",
+        "haversine": "1.1.1"
+    },
+    "devDependencies": {
+        "@azure/functions": "1.2.3",
+        "@babel/core": "7.14.6",
+        "@babel/plugin-proposal-class-properties": "7.14.5",
+        "@babel/plugin-proposal-decorators": "7.14.5",
+        "@babel/preset-env": "7.14.7",
+        "@babel/preset-typescript": "7.14.5",
+        "@dvsa/eslint-config-ts": "2.4.0",
+        "@types/haversine": "1.1.5",
+        "@types/jest": "26.0.24",
+        "@types/node": "16.3.3",
+        "babel-jest": "27.0.6",
+        "husky": "7.0.1",
+        "jest": "27.0.6",
+        "jest-junit": "13.0.0",
+        "jest-mock-extended": "1.0.18",
+        "jest-standard-reporter": "2.0.0",
+        "rimraf": "3.0.2",
+        "ts-jest": "27.0.3",
+        "typescript": "4.4.4"
+    },
+    "jest": {
+        "coverageDirectory": "<rootDir>/coverage",
+        "coverageReporters": [
+            "lcov",
+            "html"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx,js}"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "testRegex": "./tests/.*.test.ts$",
+        "roots": [
+            "<rootDir>"
+        ],
+        "setupFiles": [
+            "<rootDir>/setup-jest.js"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@ssh.dev.azure.com:v3/DvsaDev/ftts-beta/ftts-beta"
+    },
+    "optionalDependencies": {
+        "fsevents": "2.1.2"
+    },
+    "author": "",
+    "license": "ISC"
+}

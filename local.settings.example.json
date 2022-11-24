@@ -1,0 +1,35 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureFunctionsJobHost__logging__logLevel__Default": "Trace",
+        "APPINSIGHTS_INSTRUMENTATIONKEY": "mock-key",
+        "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "CENTRES_CACHE_INTERVAL": "",
+        "CRM_BASE_URL": "",
+        "CRM_CACHE_FILE": "centres-fallback.json",
+        "CRM_CENTRES_URL": "",
+        "CRM_CLIENT_ID": "",
+        "CRM_CLIENT_SECRET" : "",
+        "CRM_TOKEN_URL": "",
+        "DISABLE_EGRESS_FILTERING": false,
+        "EGRESS_CUSTOM_ALLOWED_ADDRESSES": "[]",
+        "FUNCTIONS_WORKER_RUNTIME": "node",
+        "FUNCTIONS_EXTENSION_VERSION" : "~4",
+        "GEOCODING_URL": "",
+        "GEOCODING_STUB_URL": "",
+        "GOOGLE_MAPS_API_KEY": "",
+        "LOG_LEVEL": "debug",
+        "NODE_ENV": "development",
+        "USE_GEOCODING_STUB": "true",
+        "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "",
+        "WEBSITE_CONTENTSHARE": "",
+        "WEBSITE_ENABLE_SYNC_UPDATE_SITE": "false",
+        "WEBSITE_NODE_DEFAULT_VERSION":"~14",
+        "WEBSITE_SITE_NAME": "ftts-location-api",
+        "WEBSITE_RUN_FROM_PACKAGE": ""
+    },
+    "Host": {
+        "CORS": "*"
+    }
+}
